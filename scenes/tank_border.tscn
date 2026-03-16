@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmg21thlp31g"]
+
+[ext_resource type="Texture2D" uid="uid://bu2kcuitycjl0" path="res://assets/sprites/tilemaps/industrial/1_Industrial_Tileset_1B.png" id="1_5btu0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tg0k5"]
+normal = Vector2(0, 1)
+distance = -1.0
+
+[node name="tank border" type="StaticBody2D" unique_id=1279569958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=968171219]
+shape = SubResource("WorldBoundaryShape2D_tg0k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1745546460]
+texture = ExtResource("1_5btu0")
+region_enabled = true
+region_rect = Rect2(0, 31, 96, 9)

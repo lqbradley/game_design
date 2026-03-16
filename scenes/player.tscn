@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://clbg3w24yvtnj"]
+
+[ext_resource type="Texture2D" uid="uid://cih0f7rn6r10s" path="res://assets/sprites/sprite/Octopus Idle Sheet.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c2qyu1iyu004g" path="res://scenes/player.gd" id="1_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+radius = 13.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1120576569]
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=789587366]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_dqkch")
+autoplay = "default"
+frame_progress = 0.30153155
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1484265898]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_3vyb7")
