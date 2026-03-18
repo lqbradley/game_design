@@ -51,7 +51,7 @@ func start_test_case(fs: Array[TestCase]) -> void:
 		
 		#$Label.text("Currently Testing: Pizza")
 		print(get_children())
-		print($MyLabel.text)
+		$/root/WaterTutorial/Player/Camera2D/MyLabel.text = "gay"
 		var callable = x.Function
 		callable.call(x.VarName, x.Inputs)
 		
