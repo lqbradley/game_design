@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var acceleration = GameManager.ACCELERATION
-@onready var JUMPSTYLE = GameManager.JUMP_STYLE
+@onready var JUMP_STYLE = GameManager.JUMP_STYLE
 @onready var JUMP_VELOCITY = GameManager.JUMP_VELOCITY
 @onready var MAX_SPEED = GameManager.MAX_SPEED
 @onready var DASH_DISTANCE = GameManager.DASH_DISTANCE
@@ -11,8 +11,8 @@ extends CharacterBody2D
 var SPEED = 300.0
 #const JUMP_VELOCITY = -500.0
 #const MAX_SPEED = 350.0
-const MAX_HOVER_TIME = 2.0
-const MAX_JUMP_HEIGHT = 50.0
+const MAX_HOVER_TIME = 1.5
+const MAX_JUMP_HEIGHT = 160.0
 const CUT_JUMP_TIME = 20
 #const DASH_DISTANCE = 1000
 #const DASH_TIME = 0.8
@@ -22,7 +22,7 @@ var time_passed_since_pressed_acceleration = 0
 var number_already_jump: int = 0
 var time_passed_since_pressed_jump = 0
 var time_passed_since_pressed_dash = 0
-var JUMP_STYLE = "simple_jump"
+#var JUMP_STYLE = "simple_jump"
 
 var is_flip_h: bool = false
 var is_player_dashing: bool = false
@@ -65,9 +65,7 @@ func _physics_process(delta: float) -> void:
 		dash_timer.start()
 		await dash_timer.timeout
 		is_player_dashing = false
-	
-	print(velocity.x)
-		
+			
 	
 	#if direction == 0:
 		#direction = Vector2.FORWARD
@@ -111,7 +109,7 @@ func hold_hover(delta):
 			pass
 		else: 
 			time_passed_since_pressed_jump += delta
-			if position.y >= MAX_JUMP_HEIGHT:
+			if position.y <= MAX_JUMP_HEIGHT:
 				position.y = MAX_JUMP_HEIGHT
 				velocity.y = 0
 			else:

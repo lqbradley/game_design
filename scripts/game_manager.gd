@@ -8,20 +8,20 @@ var DASH_DISTANCE: int
 var DASH_TIME: float
 
 const SCENARIOS = {
+	"JUMP_STYLE": [ "double_jump", "hold_hover","simple_jump",  "hold_jump",],
 	"ACCELERATION": [5,10,INF],
-	"MAX_SPEED": [500,800,1000],
+	"MAX_SPEED": [400,500,8000],
 	"JUMP_VELOCITY": [-300,-400,-500],
-	"JUMP_STYLE": ["simple_jump", "hold_hover", "hold_jump", "double_jump"],
 	"DASH_DISTANCE": [100,200,1000],
 	"DASH_TIME": [0.25, 0.8, 1.2]
 }
 
 const DEFAULTS = {
 	"ACCELERATION": INF,
-	"MAX_SPEED": 300,
-	"JUMP_VELOCITY": -500,
+	"MAX_SPEED": 400,
+	"JUMP_VELOCITY": -350,
 	"JUMP_STYLE": "simple_jump",
-	"DASH_DISTANCE": 200,
+	"DASH_DISTANCE": 100,
 	"DASH_TIME": 0.8,
 }
 
@@ -49,21 +49,20 @@ func start_test_case(fs: Array[TestCase]) -> void:
 			if child is Timer:
 				child.queue_free()
 		
-		#$Label.text("Currently Testing: Pizza")
-		print(get_children())
-		$/root/WaterTutorial/Player/Camera2D/MyLabel.text = "gay"
+		set_default_variables(DEFAULTS)
+		print("CURRENT VAR: " + str(x.VarName))
+		print("VALUE: " + str(x.Inputs))
 		var callable = x.Function
 		callable.call(x.VarName, x.Inputs)
 		
 		var timer = Timer.new()
 		add_child(timer)
-		timer.wait_time = 12.0
+		timer.wait_time = 12
 		timer.start()
 		timer.timeout.connect(_on_timer_timeout)
-		print(ACCELERATION)
 		await timer.timeout
 
-func set_var(variable_name: String, val: float)->void:
+func set_var(variable_name: String, val)->void:
 	set(variable_name, val)
 
 func generate_test_case(variable_name: String, values: Array) -> Array:
