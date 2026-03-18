@@ -48,7 +48,10 @@ func start_test_case(fs: Array[TestCase]) -> void:
 		for child in get_children():
 			if child is Timer:
 				child.queue_free()
-		#test_case_label.set_text("Currently Testing: " + str(x.VarName) + "\nValue: " + str(x.Inputs))
+		
+		#$Label.text("Currently Testing: Pizza")
+		print(get_children())
+		print($MyLabel.text)
 		var callable = x.Function
 		callable.call(x.VarName, x.Inputs)
 		

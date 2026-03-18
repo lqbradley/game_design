@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bbb2c845ilaj"]
 
 [ext_resource type="Texture2D" uid="uid://b1hkmipxovbpq" path="res://assets/sprites/tilemaps/underwater.png" id="1_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://cna7ksb4ps5bh" path="res://scenes/game_manager.tscn" id="1_trtic"]
 [ext_resource type="PackedScene" uid="uid://clbg3w24yvtnj" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ewh41lhyw0y1" path="res://assets/sprites/tilemaps/waterfall-autotiles-anim.png" id="2_dinhu"]
 [ext_resource type="Texture2D" uid="uid://c46x0d24b61hi" path="res://assets/sprites/tilemaps/calm-water-autotiles-anim.png" id="3_kvuet"]
@@ -2029,9 +2028,6 @@ _data = {
 
 [node name="WaterTutorial" type="Node2D" unique_id=1282682766]
 script = SubResource("GDScript_ir15t")
-
-[node name="GameManager" parent="." unique_id=742815521 instance=ExtResource("1_trtic")]
-unique_name_in_owner = true
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=250196944]
 visible = false

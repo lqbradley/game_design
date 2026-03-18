@@ -8,12 +8,8 @@ script = ExtResource("1_hwd4i")
 [node name="TestCaseTimer" type="Timer" parent="." unique_id=1772845876]
 wait_time = 3.0
 
-[node name="TestCaseLabel" type="Label" parent="." unique_id=895647793]
-visible = false
-offset_left = -274.0
-offset_top = -18.0
-offset_right = -167.0
-offset_bottom = 41.0
-theme_override_font_sizes/font_size = 12
+[node name="MyLabel" type="Label" parent="." unique_id=1044154224]
+offset_right = 40.0
+offset_bottom = 23.0
 text = "Currently Testing: 
 Value: "
