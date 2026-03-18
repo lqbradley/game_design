@@ -1,24 +1,41 @@
 extends Node
 
-
 var ACCELERATION
 var MAX_SPEED
-var JUMP_VELOCITY
-var JUMP_HEIGHT
-var JUMP_STYLE
+var JUMP_VELOCITY: float
+var JUMP_STYLE: String
+var DASH_DISTANCE: int
+var DASH_TIME: float
 
 const SCENARIOS = {
 	"ACCELERATION": [5,10,INF],
 	"MAX_SPEED": [500,800,1000],
-	"JUMP_VELOCITY": [],
-	"JUMP_HEIGHT": [30,50,100],
-	"JUMP_STYLE": ["simple_jump", "hold_hover", "hold_jump", "double_jump"]
+	"JUMP_VELOCITY": [-300,-400,-500],
+	"JUMP_STYLE": ["simple_jump", "hold_hover", "hold_jump", "double_jump"],
+	"DASH_DISTANCE": [100,200,1000],
+	"DASH_TIME": [0.25, 0.8, 1.2]
+}
+
+const DEFAULTS = {
+	"ACCELERATION": INF,
+	"MAX_SPEED": 300,
+	"JUMP_VELOCITY": -500,
+	"JUMP_STYLE": "simple_jump",
+	"DASH_DISTANCE": 200,
+	"DASH_TIME": 0.8,
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var acc_test_cases = generate_test_case("ACCELERATION", [5,10,20])
-	#start_test_case(acc_test_cases)
+	set_default_variables(DEFAULTS)
+
+	var test_cases: Array[TestCase] = []
+	for scenario in SCENARIOS:
+		var tests: Array[TestCase] = generate_test_case(scenario, SCENARIOS[scenario])
+		for t in tests:
+			test_cases.append(t)
+	#var acc_test_cases = generate_test_case("ACCELERATION", [5,10,20])
+	start_test_case(test_cases)
 	pass
 
 func _on_timer_timeout():
@@ -31,13 +48,13 @@ func start_test_case(fs: Array[TestCase]) -> void:
 		for child in get_children():
 			if child is Timer:
 				child.queue_free()
-				
+		#test_case_label.set_text("Currently Testing: " + str(x.VarName) + "\nValue: " + str(x.Inputs))
 		var callable = x.Function
 		callable.call(x.VarName, x.Inputs)
 		
 		var timer = Timer.new()
 		add_child(timer)
-		timer.wait_time = 2.0
+		timer.wait_time = 12.0
 		timer.start()
 		timer.timeout.connect(_on_timer_timeout)
 		print(ACCELERATION)
@@ -56,6 +73,10 @@ func generate_test_case(variable_name: String, values: Array) -> Array:
 		test_cases.append(a)
 	return test_cases 
 
+func set_default_variables(dict: Dictionary):
+	for var_name in dict:
+		set(var_name, dict[var_name])
+'''
 func set_acceleration(acc: float)->void:
 	ACCELERATION = acc
 	
@@ -67,6 +88,8 @@ func test_case_acceleration(acs: Array) -> Array:
 		a.Inputs = acceleration
 		acceleration_test_case.append(a)
 	return acceleration_test_case
+'''
+
 
 
 class TestCase:
@@ -77,8 +100,12 @@ class TestCase:
 class PlayerDefaults:
 	var Acceleration: float
 	var MaxSpeed: float
+	var JumpVelocity: int
+	var JumpStyle: String
+	var DashDistance: int
+	var DashTime: float
 
-		
+
 		
 
 		

@@ -47,3 +47,8 @@ target_position = Vector2(24, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=815063738]
 target_position = Vector2(-23, 0)
+
+[node name="DashTimer" type="Timer" parent="." unique_id=875571895]
+wait_time = 0.5
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
