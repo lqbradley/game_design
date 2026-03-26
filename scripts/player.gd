@@ -8,9 +8,9 @@ extends CharacterBody2D
 @onready var DASH_TIME = GameManager.DASH_TIME
 
 #const acceleration = INF
-var SPEED = 300.0
 #const JUMP_VELOCITY = -500.0
 #const MAX_SPEED = 350.0
+var SPEED = 300.0
 const MAX_HOVER_TIME = 1.5
 const MAX_JUMP_HEIGHT = 160.0
 const CUT_JUMP_TIME = 20

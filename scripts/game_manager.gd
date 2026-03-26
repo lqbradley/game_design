@@ -57,7 +57,7 @@ func start_test_case(fs: Array[TestCase]) -> void:
 		
 		var timer = Timer.new()
 		add_child(timer)
-		timer.wait_time = 12
+		timer.wait_time = 8
 		timer.start()
 		timer.timeout.connect(_on_timer_timeout)
 		await timer.timeout
