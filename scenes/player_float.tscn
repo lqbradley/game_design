@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bjle617yfa7f"]
+
+[ext_resource type="Texture2D" uid="uid://cih0f7rn6r10s" path="res://assets/sprites/sprite/Octopus Idle Sheet.png" id="1_bglav"]
+[ext_resource type="Script" uid="uid://ckieid3nox0jn" path="res://scripts/player_float.gd" id="1_khapn"]
+[ext_resource type="Script" uid="uid://bxxagkhepj4kx" path="res://scripts/jump_bar.gd" id="3_8jkvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uejwc"]
+atlas = ExtResource("1_bglav")
+region = Rect2(0, 0, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khapn"]
+atlas = ExtResource("1_bglav")
+region = Rect2(38, 0, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jkvu"]
+atlas = ExtResource("1_bglav")
+region = Rect2(76, 0, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwwoo"]
+atlas = ExtResource("1_bglav")
+region = Rect2(114, 0, 38, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vphjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uejwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khapn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jkvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwwoo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mcgp"]
+radius = 13.0
+
+[node name="player_float" type="CharacterBody2D" unique_id=893433858]
+script = ExtResource("1_khapn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=58716282]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vphjb")
+autoplay = "default"
+frame_progress = 0.7830781
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2015928435]
+shape = SubResource("CircleShape2D_7mcgp")
+
+[node name="WallRay" type="RayCast2D" parent="CollisionShape2D" unique_id=1737059367]
+position = Vector2(0, 11)
+target_position = Vector2(16, 0)
+hit_from_inside = true
+
+[node name="JumpBar" type="ProgressBar" parent="." unique_id=2109877738]
+offset_left = -26.0
+offset_top = -16.0
+offset_right = -22.0
+fill_mode = 3
+script = ExtResource("3_8jkvu")
