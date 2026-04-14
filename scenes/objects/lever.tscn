@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://jslsqi2od15e"]
+
+[ext_resource type="Texture2D" uid="uid://bdgvyjvfn3xac" path="res://assets/sprites/sprite/lever.png" id="1_1btnt"]
+[ext_resource type="Script" uid="uid://dc13fl6bm3yeu" path="res://scripts/lever.gd" id="2_7uavd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soi7j"]
+atlas = ExtResource("1_1btnt")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kj1s"]
+atlas = ExtResource("1_1btnt")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk4f0"]
+atlas = ExtResource("1_1btnt")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h01c4"]
+atlas = ExtResource("1_1btnt")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awwea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soi7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kj1s")
+}],
+"loop": false,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk4f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h01c4")
+}],
+"loop": false,
+"name": &"deactivate",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76uva"]
+size = Vector2(24, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncfea"]
+radius = 151.0298
+
+[node name="lever" type="RigidBody2D" unique_id=447797852]
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1343404707 groups=["pushable_object"]]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_awwea")
+animation = &"activate"
+script = ExtResource("2_7uavd")
+
+[node name="player_move_area" type="Area2D" parent="sprite" unique_id=1443396844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/player_move_area" unique_id=1739226876]
+shape = SubResource("RectangleShape2D_76uva")
+
+[node name="influence_area" type="Area2D" parent="sprite" unique_id=1563827170]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/influence_area" unique_id=1284728989]
+shape = SubResource("CircleShape2D_ncfea")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1000011003]
+polygon = PackedVector2Array(-3, -8, 3, -8, 3, 4, 12, 4, 12, 8, -12, 8, -12, 4, -3, 4)
+
+[connection signal="body_entered" from="sprite/influence_area" to="sprite" method="_on_influence_area_body_entered"]

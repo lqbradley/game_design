@@ -19,7 +19,7 @@ const ACCELERATION: float = 18.5
 const FRICTION: float = 22.5
 
 const GRAVITY_NORMAL: float = 14.5  # not sliding on wall
-const GRAVITY_WALL: float = 8.5		# gravity when sliding on wall
+const GRAVITY_WALL: float = 8.5		# gravity when sliding on wall	# og value: 8.5
 const WALL_JUMP_PUSH_FORCE: float = 100.0
 
 var wall_contact_coyote: float = 0.0 # timer how long consider player is still on the wall
@@ -37,9 +37,6 @@ var is_climbing: bool = false
 # position stamina bar so it's not behind a wall
 const JUMP_BAR_POS_LEFT: float = -7
 const ST_BAR_POS_RIGHT: float = 4
-const STAMINA_AMT:float = 3.5	# how long player can hold onto wall
-const CLIMB_STAMINA_DRAIN: float = 2.5	# multiplier when player is climbing a wall
-var climb_stamina_timer: float = 0.0	# time left until stamina bar runs out
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -56,8 +53,8 @@ func _physics_process(delta: float) -> void:
 	# movement
 	var x_direction := Input.get_axis("move_left", "move_right")
 	if !is_climbing:
-		if wall_jump_lock > 0.0:
-			wall_jump_lock -= delta
+		#if wall_jump_lock > 0.0:
+			#wall_jump_lock -= delta
 		var velocity_weight_x: float = 1.0 - exp(-(ACCELERATION if x_direction else FRICTION) * delta)
 		var weight_mod: float = 0.5 if wall_jump_lock > 0.0 else 1.0
 		velocity.x = lerp(velocity.x, x_direction * MAX_SPEED, velocity_weight_x * weight_mod)
@@ -67,16 +64,16 @@ func _physics_process(delta: float) -> void:
 			#velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		if on_wall_in_air and velocity.y > 0:	# is currently falling
-			wall_contact_coyote = WALL_CONTACT_COYOTE_TIME
+			wall_contact_coyote = WALL_CONTACT_COYOTE_TIME # set timer so player can still jump
 			look_dir_x = int(-wall_ray.get_collision_normal().x)  # get_collision_normal = -1 if hit from right, 1 if hit from left
 			
-			if x_direction or Input.is_action_pressed("ui_accept"):
+			if x_direction or Input.is_action_pressed("move_up"):
 				velocity.y = GRAVITY_WALL
 			else:
 				velocity.y += GRAVITY_NORMAL
-		else:
-			if wall_contact_coyote > 0.0:
-				wall_contact_coyote -= delta
+		else: # if player is not currently falling
+			#if wall_contact_coyote > 0.0:
+				#wall_contact_coyote -= delta
 			velocity.y += GRAVITY_NORMAL
 		
 		if (is_on_floor() or wall_contact_coyote > 0.0) and Input.is_action_just_pressed("jump"):
@@ -86,24 +83,25 @@ func _physics_process(delta: float) -> void:
 				wall_jump_lock = WALL_JUMP_LOCK_TIME
 	
 	if wall_contact_coyote > 0.0 or is_climbing:
-		if Input.is_action_pressed("jump") and climb_stamina_timer > 0.0 and on_wall_in_air:
+		#if Input.is_action_pressed("jump") and climb_stamina_timer > 0.0 and on_wall_in_air:
+		if Input.is_action_pressed("jump") and on_wall_in_air:
 			is_climbing = true
-			wall_jump_lock = 0.0 # stop it counting down
+			#wall_jump_lock = 0.0 # stop it counting down
 			
 			var y_input: float = Input.get_axis("move_up", "move_down")
 			var velocity_weight_y: float = 1.0 - exp(-(ACCELERATION if y_input else FRICTION) * delta)
 			velocity.y = lerp(velocity.y, y_input * CLIMB_SPEED, velocity_weight_y)
 			
-			var drain_rate: float = CLIMB_STAMINA_DRAIN if y_input else 1.0
-			climb_stamina_timer -= delta * drain_rate
+			#var drain_rate: float = CLIMB_STAMINA_DRAIN if y_input else 1.0
+			#climb_stamina_timer -= delta * drain_rate
 		else:
 			if !on_wall and !is_on_floor() and is_climbing:
 				velocity.y = CLIMB_EXIT_BOOST.y
 				if !x_direction:
 					velocity.x = CLIMB_EXIT_BOOST.x * look_dir_x
 				is_climbing = false
-	if is_on_floor():
-		climb_stamina_timer = STAMINA_AMT
+	#if is_on_floor():
+		#climb_stamina_timer = STAMINA_AMT
 		
 	move_and_slide()
 	_animation(x_direction, on_wall)

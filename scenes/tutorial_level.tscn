@@ -1,0 +1,81 @@
+[gd_scene format=4 uid="uid://c0nwjd0kx083t"]
+
+[ext_resource type="PackedScene" uid="uid://bbf883w78a57g" path="res://scenes/objects/leverage_for_player.tscn" id="1_3vde5"]
+[ext_resource type="PackedScene" uid="uid://c88v7fi8v4xs0" path="res://scenes/objects/pickup_object.tscn" id="1_fem2g"]
+[ext_resource type="PackedScene" uid="uid://bn60q23drtk6" path="res://scenes/objects/pushable_object.tscn" id="1_hpxl2"]
+[ext_resource type="PackedScene" uid="uid://dqffdyodktoko" path="res://scenes/objects/pullable_object.tscn" id="1_mtuav"]
+[ext_resource type="Texture2D" uid="uid://dyhme2idqwnfp" path="res://assets/sprites/tilemaps/industrial/2_Industrial_Tileset_1C_Background_Violet.png" id="1_nm3d5"]
+[ext_resource type="PackedScene" uid="uid://uees5hqhu2ef" path="res://scenes/player3.tscn" id="2_mtuav"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fem2g"]
+texture = ExtResource("1_nm3d5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hpxl2"]
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_fem2g")
+
+[node name="tutorial_level" type="Node2D" unique_id=2023402671]
+
+[node name="pickup_object" parent="." unique_id=1372657485 instance=ExtResource("1_fem2g")]
+position = Vector2(305, -10)
+
+[node name="pushable_object" parent="." unique_id=1161119935 instance=ExtResource("1_hpxl2")]
+position = Vector2(100, -7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="leverage_for_player" parent="." unique_id=493842134 instance=ExtResource("1_3vde5")]
+position = Vector2(408, -21)
+
+[node name="coral" parent="." unique_id=672585284 instance=ExtResource("1_mtuav")]
+position = Vector2(554, -12)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=294488496]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAFAPz/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAMAP7/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAPv/AAAAAAAAAAANAPv/AAAAAAAAAAAOAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAASAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAUAP3/AAAAAAAAAAAVAP3/AAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAiAPz/AAAAAAAAAAAiAP3/AAAAAAAAAAAjAP3/AAAAAAAAAAAkAP3/AAAAAAAAAAAlAP3/AAAAAAAAAAAmAP3/AAAAAAAAAAAnAP3/AAAAAAAAAAAoAP3/AAAAAAAAAAApAP3/AAAAAAAAAAAjAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAApAAAAAAAAAAAAAAAqAAAAAAAAAAAAAAAPAPr/AAAAAAAAAAAPAPn/AAAAAAAAAAAPAPj/AAAAAAAAAAAPAPf/AAAAAAAAAAAPAPb/AAAAAAAAAAAPAPX/AAAAAAAAAAAPAPT/AAAAAAAAAAAPAPP/AAAAAAAAAAAPAPL/AAAAAAAAAAAPAPH/AAAAAAAAAAAPAPD/AAAAAAAAAAAQAPD/AAAAAAAAAAARAPD/AAAAAAAAAAASAPD/AAAAAAAAAAATAPD/AAAAAAAAAAAUAPD/AAAAAAAAAAAVAPD/AAAAAAAAAAAWAPD/AAAAAAAAAAAXAPD/AAAAAAAAAAAYAPD/AAAAAAAAAAAZAPD/AAAAAAAAAAAaAPD/AAAAAAAAAAAbAPD/AAAAAAAAAAAcAPD/AAAAAAAAAAAdAPD/AAAAAAAAAAAeAPD/AAAAAAAAAAAfAPD/AAAAAAAAAAAgAPD/AAAAAAAAAAAhAPD/AAAAAAAAAAAiAPD/AAAAAAAAAAAiAPH/AAAAAAAAAAAiAPL/AAAAAAAAAAAiAPP/AAAAAAAAAAAiAPT/AAAAAAAAAAAiAPX/AAAAAAAAAAAiAPb/AAAAAAAAAAAiAPf/AAAAAAAAAAAiAPj/AAAAAAAAAAAiAPn/AAAAAAAAAAAiAPr/AAAAAAAAAAAiAPv/AAAAAAAAAAAWAPr/AAAAAAAAAAAXAPr/AAAAAAAAAAAYAPf/AAAAAAAAAAAZAPf/AAAAAAAAAAAcAPf/AAAAAAAAAAAdAPf/AAAAAAAAAAAqAP3/AAAAAAAAAAAqAP7/AAAAAAAAAAAqAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_hpxl2")
+
+[node name="Player" parent="." unique_id=1120576569 instance=ExtResource("2_mtuav")]
+position = Vector2(260, -13)
+PULL_LENGTH = 32.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=755855309]
+position = Vector2(0, 1)

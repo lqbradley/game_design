@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bbf883w78a57g"]
+
+[ext_resource type="Texture2D" uid="uid://brur56usep2ta" path="res://assets/sprites/tilemaps/mossy/Mossy - FloatingPlatforms.png" id="1_4jvka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weskk"]
+size = Vector2(318, 315)
+
+[node name="leverage_for_player" type="RigidBody2D" unique_id=493842134 groups=["to_object"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=385666007]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_4jvka")
+region_enabled = true
+region_rect = Rect2(0, 473, 472, 470)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1802030188]
+position = Vector2(5.9604645e-08, 3)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_weskk")

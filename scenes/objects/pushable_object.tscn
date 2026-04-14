@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bn60q23drtk6"]
+
+[ext_resource type="Texture2D" uid="uid://bl5r7ewdmbx76" path="res://assets/sprites/animals/jelly-spotted.png" id="1_u2c6q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cf6tn"]
+radius = 3.0
+height = 12.0
+
+[node name="pushable_object" type="RigidBody2D" unique_id=1161119935 groups=["pushable_object"]]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1616900461]
+texture_filter = 1
+texture = ExtResource("1_u2c6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=686220079]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_cf6tn")

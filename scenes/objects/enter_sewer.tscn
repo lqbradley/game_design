@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bs3w8em4dihao"]
+
+[ext_resource type="Script" uid="uid://vaj65jr55ik1" path="res://scripts/enter_sewer.gd" id="1_6tfgr"]
+[ext_resource type="Texture2D" uid="uid://bu2kcuitycjl0" path="res://assets/sprites/tilemaps/industrial/1_Industrial_Tileset_1B.png" id="2_q1f5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46ga8"]
+size = Vector2(21.5, 12.5)
+
+[node name="enter_sewer" type="Sprite2D" unique_id=1209220944 groups=["exit"]]
+script = ExtResource("1_6tfgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834403990]
+texture_filter = 1
+position = Vector2(16, -15)
+rotation = 1.5707964
+texture = ExtResource("2_q1f5n")
+region_enabled = true
+region_rect = Rect2(97, 96, 31, 32)
+
+[node name="exit_area" type="Area2D" parent="." unique_id=33163993]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=255437620]
+position = Vector2(1.25, -7.75)
+shape = SubResource("RectangleShape2D_46ga8")
+
+[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]

@@ -1,113 +1,63 @@
 extends Node
 
-var ACCELERATION
-var MAX_SPEED
-var JUMP_VELOCITY: float
-var JUMP_STYLE: String
-var DASH_DISTANCE: int
-var DASH_TIME: float
+var exits
+var spawn_points
+var current_scene
 
-const SCENARIOS = {
-	"JUMP_STYLE": [ "double_jump", "hold_hover","simple_jump",  "hold_jump",],
-	"ACCELERATION": [5,10,INF],
-	"MAX_SPEED": [400,500,8000],
-	"JUMP_VELOCITY": [-300,-400,-500],
-	"DASH_DISTANCE": [100,200,1000],
-	"DASH_TIME": [0.25, 0.8, 1.2]
-}
+const BASE_PATH := "res://scenes/levels/"
+@onready var player_scene: PackedScene = preload("res://scenes/player3.tscn")
 
-const DEFAULTS = {
-	"ACCELERATION": INF,
-	"MAX_SPEED": 400,
-	"JUMP_VELOCITY": -350,
-	"JUMP_STYLE": "simple_jump",
-	"DASH_DISTANCE": 100,
-	"DASH_TIME": 0.8,
-}
+var level1_tank1: PackedScene = preload("res://scenes/levels/level1_tank1.tscn")
+var level1_sewer: PackedScene = preload("res://scenes/levels/level1_sewer.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_default_variables(DEFAULTS)
+	_setup_level()
 
-	var test_cases: Array[TestCase] = []
-	for scenario in SCENARIOS:
-		var tests: Array[TestCase] = generate_test_case(scenario, SCENARIOS[scenario])
-		for t in tests:
-			test_cases.append(t)
-	#var acc_test_cases = generate_test_case("ACCELERATION", [5,10,20])
-	start_test_case(test_cases)
-	pass
 
-func _on_timer_timeout():
-	get_tree().reload_current_scene()
+func _setup_level() -> void:
+	exits = get_tree().get_nodes_in_group("exit")
+	for exit in exits:
+		if not exit.loadNewArea.is_connected(_on_exit_load_new_area):
+			exit.loadNewArea.connect(_on_exit_load_new_area)
+	_spawn_player()
 
-# should pass a structure of function and input
-# so of the format {"function": , "input": }
-func start_test_case(fs: Array[TestCase]) -> void:
-	for x in fs:
-		for child in get_children():
-			if child is Timer:
-				child.queue_free()
+func _on_exit_load_new_area(current_scene, exit_door) -> void:
+	call_deferred("_switch_level", current_scene)
+
+func _switch_level(current_scene) -> void:
+	var next_level := _get_new_level(current_scene)
+
+	if next_level == "level1_tank1":
+		get_tree().change_scene_to_packed(level1_tank1)
+	elif next_level == "level1_sewer":
+		get_tree().change_scene_to_packed(level1_sewer)
+
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+	var scene := get_tree().current_scene
+	if scene == null:
+		return
 		
-		set_default_variables(DEFAULTS)
-		print("CURRENT VAR: " + str(x.VarName))
-		print("VALUE: " + str(x.Inputs))
-		var callable = x.Function
-		callable.call(x.VarName, x.Inputs)
-		
-		var timer = Timer.new()
-		add_child(timer)
-		timer.wait_time = 8
-		timer.start()
-		timer.timeout.connect(_on_timer_timeout)
-		await timer.timeout
+	_setup_level()
 
-func set_var(variable_name: String, val)->void:
-	set(variable_name, val)
+func _spawn_player() -> void:
+	spawn_points = get_tree().get_nodes_in_group("spawn_points")
+	print(spawn_points)
+	if spawn_points.is_empty():
+		return
 
-func generate_test_case(variable_name: String, values: Array) -> Array:
-	var test_cases: Array[TestCase] = []
-	for v in values:
-		var a = TestCase.new()
-		a.Function = set_var
-		a.VarName = variable_name
-		a.Inputs = v
-		test_cases.append(a)
-	return test_cases 
+	var _player = player_scene.instantiate() as CharacterBody2D
+	get_tree().current_scene.add_child(_player)
+	_player.global_position = spawn_points[0].global_position
 
-func set_default_variables(dict: Dictionary):
-	for var_name in dict:
-		set(var_name, dict[var_name])
-'''
-func set_acceleration(acc: float)->void:
-	ACCELERATION = acc
-	
-func test_case_acceleration(acs: Array) -> Array:
-	var acceleration_test_case: Array[TestCase] = []
-	for acceleration in acs:
-		var a = TestCase.new()
-		a.Function = set_acceleration
-		a.Inputs = acceleration
-		acceleration_test_case.append(a)
-	return acceleration_test_case
-'''
+	var camera := Camera2D.new()
+	_player.add_child(camera)
+	camera.zoom = Vector2(3.0, 3.0)
 
 
-
-class TestCase:
-	var Function: Callable
-	var VarName: String
-	var Inputs: Variant # should be type any but it's not there??
-	
-class PlayerDefaults:
-	var Acceleration: float
-	var MaxSpeed: float
-	var JumpVelocity: int
-	var JumpStyle: String
-	var DashDistance: int
-	var DashTime: float
-
-
-		
-
-		
+func _get_new_level(current_level) -> String:
+	if current_level.name == "level1_tank1":
+		return "level1_sewer"
+	else:
+		return "level1_tank1"

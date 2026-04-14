@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dqffdyodktoko"]
+
+[ext_resource type="Script" uid="uid://b4s6ou8h1cd8a" path="res://scripts/pullable_object.gd" id="1_hxm6e"]
+[ext_resource type="Texture2D" uid="uid://bwyly7ygbrnoc" path="res://assets/sprites/animals/coral-brain-big.png" id="2_mlbqt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_poh52"]
+radius = 6.0
+
+[node name="pullable_box" type="RigidBody2D" unique_id=672585284 groups=["to_player"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_hxm6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=736115609]
+texture_filter = 1
+texture = ExtResource("2_mlbqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1196815619 groups=["to_player"]]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_poh52")

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://nbvj67hrkc3g"]
+
+[ext_resource type="Script" uid="uid://dn77l8vb8qaus" path="res://scripts/climable_wall.gd" id="1_3el5t"]
+[ext_resource type="Texture2D" uid="uid://stuk2qgx48di" path="res://assets/sprites/tilemaps/industrial/1_Industrial_Tileset_1.png" id="1_nlqku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3el5t"]
+size = Vector2(12, 34)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnrtk"]
+radius = 7.0
+height = 34.0
+
+[node name="Climable Wall" type="AnimatableBody2D" unique_id=1515678898]
+script = ExtResource("1_3el5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=18955767]
+texture = ExtResource("1_nlqku")
+region_enabled = true
+region_rect = Rect2(85, 72, 12, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840203898]
+shape = SubResource("RectangleShape2D_3el5t")
+
+[node name="ClimbArea" type="Area2D" parent="." unique_id=1548183021]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea" unique_id=512772293]
+position = Vector2(6, 0)
+shape = SubResource("CapsuleShape2D_pnrtk")
+
+[connection signal="body_entered" from="ClimbArea" to="." method="_on_climb_area_body_entered"]
+[connection signal="body_exited" from="ClimbArea" to="." method="_on_climb_area_body_exited"]
