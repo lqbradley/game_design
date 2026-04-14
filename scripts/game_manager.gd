@@ -4,12 +4,11 @@ var exits
 var spawn_points
 var current_scene
 
-const BASE_PATH := "res://scenes/levels/"
 @onready var player_scene: PackedScene = preload("res://scenes/player3.tscn")
 
 var level1_tank1: PackedScene = preload("res://scenes/levels/level1_tank1.tscn")
 var level1_sewer: PackedScene = preload("res://scenes/levels/level1_sewer.tscn")
-
+var level1_boat: PackedScene = preload("res://scenes/levels/level_1_boat.tscn")
 func _ready() -> void:
 	_setup_level()
 
@@ -31,6 +30,8 @@ func _switch_level(current_scene) -> void:
 		get_tree().change_scene_to_packed(level1_tank1)
 	elif next_level == "level1_sewer":
 		get_tree().change_scene_to_packed(level1_sewer)
+	elif next_level == "level1_boat":
+		get_tree().change_scene_to_packed(level1_boat)
 
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -59,5 +60,7 @@ func _spawn_player() -> void:
 func _get_new_level(current_level) -> String:
 	if current_level.name == "level1_tank1":
 		return "level1_sewer"
+	elif current_level.name == "level1_sewer":
+		return "level1_boat"
 	else:
 		return "level1_tank1"

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bue64xdwdnrt7"]
+
+[ext_resource type="Texture2D" uid="uid://csy6pb4wkal2" path="res://assets/sprites/animals/baiji.png" id="1_7vibe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i461h"]
+size = Vector2(62, 15)
+
+[node name="mantaray" type="AnimatableBody2D" unique_id=862776975]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2098475169]
+texture_filter = 1
+position = Vector2(32, -1)
+texture = ExtResource("1_7vibe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=485564584]
+position = Vector2(32, -0.5)
+shape = SubResource("RectangleShape2D_i461h")

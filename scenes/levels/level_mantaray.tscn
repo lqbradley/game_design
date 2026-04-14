@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bovg7t46442g"]
+
+[ext_resource type="Script" uid="uid://1ewsj6oplib2" path="res://scripts/level_mantaray.gd" id="1_nd4bs"]
+
+[node name="level_mantaray" type="Node2D" unique_id=1953943372]
+script = ExtResource("1_nd4bs")
