@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp8aaoytp2x5k"
-path="res://.godot/imported/Mossy - Hanging Plants.png-109deb49116a3dc21d0fd434e765eace.ctex"
+uid="uid://u5pys88ioyne"
+path="res://.godot/imported/goldfish_marker.png-c14855aa4aa681b4f3eb6dfc3e857178.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/mossy/Mossy - Hanging Plants.png"
-dest_files=["res://.godot/imported/Mossy - Hanging Plants.png-109deb49116a3dc21d0fd434e765eace.ctex"]
+source_file="res://assets/sprites/sprite/goldfish_marker.png"
+dest_files=["res://.godot/imported/goldfish_marker.png-c14855aa4aa681b4f3eb6dfc3e857178.ctex"]
 
 [params]
 

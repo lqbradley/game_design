@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var player_marker: Sprite2D = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/MinimapCamera/PlayerMarker
 @onready var goal_marker: Sprite2D = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/MinimapCamera/GoalMarker
 
+@onready var goldfish_texture = load("res://assets/sprites/sprite/goldfish_marker.png")
+
 
 var goal_object: Node2D
 var OFFSET_GOAL = 48
@@ -29,7 +31,6 @@ func _ready() -> void:
 		exit_marker.scale = Vector2(1.5,1.5)
 		minimap_sewer.visible = true
 		goal_object = get_tree().current_scene.get_node("enter_sewer")
-		
 	else: 
 		is_scene_sewer = false
 		minimap_camera.zoom = Vector2(0.6,0.6)
@@ -44,6 +45,9 @@ func _ready() -> void:
 				var used_rect: Rect2i = tilemap.get_used_rect()
 				set_minimap_limits(used_rect)
 	
+	if get_tree().current_scene.name == "level1_tank1":
+		goal_object = get_tree().current_scene.get_node("goldfish")
+		goal_marker.texture = goldfish_texture
 	
 	# assign player
 	player_node = get_tree().get_nodes_in_group("player")[0]

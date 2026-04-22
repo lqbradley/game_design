@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://khxc28betv0d"]
+
+[ext_resource type="Texture2D" uid="uid://qmubjj1dr2st" path="res://assets/sprites/sprite/goldfish.png" id="1_ahjwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhdb0"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dju5y"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dxip"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcwpr"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xypa3"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frt01"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rpme"]
+atlas = ExtResource("1_ahjwn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4n1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhdb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dju5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dxip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcwpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xypa3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frt01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rpme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="goldfish" type="AnimatedSprite2D" unique_id=1500461814]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_n4n1q")
+frame_progress = 0.75307244

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3vtjmlyowdr"
-path="res://.godot/imported/Mossy - BackgroundDecoration.png-e24db754d708f2b06ba8006baac1e7e5.ctex"
+uid="uid://qmubjj1dr2st"
+path="res://.godot/imported/goldfish.png-6a2d6425421fdc0933da66bca482df98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/mossy/Mossy - BackgroundDecoration.png"
-dest_files=["res://.godot/imported/Mossy - BackgroundDecoration.png-e24db754d708f2b06ba8006baac1e7e5.ctex"]
+source_file="res://assets/sprites/sprite/goldfish.png"
+dest_files=["res://.godot/imported/goldfish.png-6a2d6425421fdc0933da66bca482df98.ctex"]
 
 [params]
 
