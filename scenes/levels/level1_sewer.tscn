@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bq7bah67tsamb" path="res://assets/sprites/tilemaps/sewer_1.png" id="1_u7evb"]
 [ext_resource type="PackedScene" uid="uid://bs3w8em4dihao" path="res://scenes/objects/enter_sewer.tscn" id="2_obyqi"]
-[ext_resource type="PackedScene" uid="uid://copyy6177e6rp" path="res://scenes/objects/mini_map.tscn" id="3_ykxj2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1n0jj"]
 texture = ExtResource("1_u7evb")
@@ -1046,10 +1045,11 @@ color = Color(0, 0, 0, 1)
 energy = 16.0
 blend_mode = 2
 
+[node name="test" type="Marker2D" parent="." unique_id=1236984499 groups=["spawn_points"]]
+position = Vector2(2449.9521, -36.15164)
+
 [node name="spawn_point2" type="Marker2D" parent="." unique_id=914477183 groups=["spawn_points"]]
 position = Vector2(61, 0)
 
 [node name="enter_sewer" parent="." unique_id=1209220944 instance=ExtResource("2_obyqi")]
 position = Vector2(2512, -23)
-
-[node name="mini-map" parent="." unique_id=6324897 instance=ExtResource("3_ykxj2")]

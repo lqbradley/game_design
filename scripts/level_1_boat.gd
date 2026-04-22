@@ -1,15 +1,12 @@
 extends Node2D
 
 @export var TIMER_LENGTH = 15
-var shrimp: PackedScene = preload("res://scenes/objects/shrimp.tscn")
 @onready var boundary_tilemap: TileMapLayer = $boundary_tilemap
 @onready var final_area_tilemap: TileMapLayer = $final_area_tilemap
 @onready var floor_tilemap: TileMapLayer = $Tilemaps/TileMapLayer
-@onready var mini_map: CanvasLayer = $"mini-map"
+@onready var shrimp: CharacterBody2D = $shrimp
 
-@onready var shrimp_texture = load("res://assets/sprites/sprite/shrimp_marker.png")
-
-
+var mini_map
 var floor_cells: Array[Vector2i]
 
 # var for bounding area -> do i still need ellipse
@@ -33,11 +30,7 @@ var current_shrimp: CharacterBody2D = null
 var viewport_main
 var subviewport
 
-func _ready() -> void:
-	var _player = get_tree().get_nodes_in_group("player")[0]
-	mini_map.player_node = _player
-	mini_map.goal_marker.texture = shrimp_texture
-	
+func _ready() -> void:	
 	# just to get bottom right corner
 	var rotated_rect = boundary_tilemap.get_used_rect()
 	start_point = rotated_rect.abs().end
@@ -74,7 +67,7 @@ func _ready() -> void:
 	
 	boundary_tilemap.visible = false # remove from view
 	final_area_tilemap.visible = false
-
+	
 
 	
 	
@@ -92,10 +85,12 @@ func _physics_process(delta: float) -> void:
 			if !is_point_in_spiral(r, current_theta) or is_point_in_wall(pos.x, pos.y):
 				continue
 			elif final_area.has_point(pos):
-				spawn_shrimp(pos.x, pos.y)
+				#spawn_shrimp(pos.x, pos.y)
+				shrimp.global_position = pos
 				break
 			else:
-				spawn_shrimp(pos.x,pos.y)
+				#spawn_shrimp(pos.x,pos.y)
+				shrimp.global_position = pos
 				current_theta -= CHANGE_THETA
 				await get_tree().create_timer(TIMER_LENGTH).timeout
 				
@@ -106,6 +101,7 @@ func spawn_shrimp(x,y) -> void:
 	var _shrimp = shrimp.instantiate() as CharacterBody2D
 	get_tree().current_scene.add_child(_shrimp)
 	_shrimp.global_position = Vector2(x,y)
+	_shrimp.add_to_group("exit")
 	mini_map.goal_object = _shrimp
 	current_shrimp = _shrimp
 	

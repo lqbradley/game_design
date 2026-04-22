@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyjrae7rqjqu"
-path="res://.godot/imported/tileset x1.png-01f014e5f0bb9300291231044d24407c.ctex"
+uid="uid://xt8cpkwt53q6"
+path="res://.godot/imported/fish_bg.png-6f9e58c991665fff1a9a650ea6349f72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/tech roguelike/tileset x1.png"
-dest_files=["res://.godot/imported/tileset x1.png-01f014e5f0bb9300291231044d24407c.ctex"]
+source_file="res://assets/sprites/fish_bg.png"
+dest_files=["res://.godot/imported/fish_bg.png-6f9e58c991665fff1a9a650ea6349f72.ctex"]
 
 [params]
 

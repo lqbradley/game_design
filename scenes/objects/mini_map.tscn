@@ -75,7 +75,7 @@ region_rect = Rect2(0, 0, 38, 31)
 visible = false
 texture = ExtResource("3_s62fb")
 
-[node name="minimap_sewer" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=1507922663 instance=ExtResource("3_d0t61")]
+[node name="mini_map_sewer" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=1507922663 instance=ExtResource("3_d0t61")]
 position = Vector2(620, 339)
 
 [node name="ExitMarker" type="Sprite2D" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=87900207]

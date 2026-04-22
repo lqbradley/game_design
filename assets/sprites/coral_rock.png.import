@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxbgfh331utoj"
-path="res://.godot/imported/0_Template_Tileset.png-e9828160999cd1edc01139370d1bde9f.ctex"
+uid="uid://bwm21yoer4obj"
+path="res://.godot/imported/coral_rock.png-74267d23ab185238335e54173d2e2c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/industrial/0_Template_Tileset.png"
-dest_files=["res://.godot/imported/0_Template_Tileset.png-e9828160999cd1edc01139370d1bde9f.ctex"]
+source_file="res://assets/sprites/coral_rock.png"
+dest_files=["res://.godot/imported/coral_rock.png-74267d23ab185238335e54173d2e2c9d.ctex"]
 
 [params]
 

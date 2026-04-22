@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blyhymfal50cu"
-path="res://.godot/imported/Assets_City.png-cc19f9994d48b5d95e4db077125f78d4.ctex"
+uid="uid://dyvemt8000jwr"
+path="res://.godot/imported/rock_bg.png-6bca15c8ecf2f418baad312e1e78c205.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/city/Assets_City.png"
-dest_files=["res://.godot/imported/Assets_City.png-cc19f9994d48b5d95e4db077125f78d4.ctex"]
+source_file="res://assets/sprites/rock_bg.png"
+dest_files=["res://.godot/imported/rock_bg.png-6bca15c8ecf2f418baad312e1e78c205.ctex"]
 
 [params]
 

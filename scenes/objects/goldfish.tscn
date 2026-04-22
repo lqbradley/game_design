@@ -56,10 +56,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [node name="goldfish" type="AnimatedSprite2D" unique_id=1500461814]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_n4n1q")
-frame_progress = 0.75307244
+autoplay = "default"
+frame_progress = 0.6788881

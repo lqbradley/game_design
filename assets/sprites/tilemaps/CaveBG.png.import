@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccng51fogrhij"
-path="res://.godot/imported/3_Far_Background_Tile.png-04a60bc8d3ca69c77d2734072bab31c1.ctex"
+uid="uid://dwxiiuroqday7"
+path="res://.godot/imported/CaveBG.png-8d916ac400ea63e386d08acb4ae3cf03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/industrial/3_Far_Background_Tile.png"
-dest_files=["res://.godot/imported/3_Far_Background_Tile.png-04a60bc8d3ca69c77d2734072bab31c1.ctex"]
+source_file="res://assets/sprites/tilemaps/CaveBG.png"
+dest_files=["res://.godot/imported/CaveBG.png-8d916ac400ea63e386d08acb4ae3cf03.ctex"]
 
 [params]
 

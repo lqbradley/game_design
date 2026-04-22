@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ubsu5odd1n0u"
-path="res://.godot/imported/tileset x3.png-2ab3a7014eee787cb3cd5d27948c3861.ctex"
+uid="uid://dxfvmw1owhl2g"
+path="res://.godot/imported/sand_bg.png-921b6eedde3d18992e4e8940f6f4fda4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/tech roguelike/tileset x3.png"
-dest_files=["res://.godot/imported/tileset x3.png-2ab3a7014eee787cb3cd5d27948c3861.ctex"]
+source_file="res://assets/sprites/sand_bg.png"
+dest_files=["res://.godot/imported/sand_bg.png-921b6eedde3d18992e4e8940f6f4fda4.ctex"]
 
 [params]
 

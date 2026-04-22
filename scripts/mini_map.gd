@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var exit_marker: Sprite2D = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/ExitMarker
-@onready var minimap_sewer: Node2D = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/minimap_sewer
+@onready var minimap_sewer: Node2D = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/mini_map_sewer
 @onready var sub_viewport_container: SubViewportContainer = $UI/PanelContainer/MarginContainer/SubViewportContainer
 @onready var subviewport: SubViewport = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport
 @onready var minimap_camera: Camera2D = $UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/MinimapCamera
@@ -14,7 +14,7 @@ extends CanvasLayer
 var goal_object: Node2D
 var OFFSET_GOAL = 48
 var OFFSET_EXIT = 100 # only for sewer
-var player_node: Node2D
+var player_node: CharacterBody2D
 var minimap_tilemap
 
 var is_scene_sewer: bool = false
@@ -38,19 +38,17 @@ func _ready() -> void:
 		exit_marker.visible = false
 		minimap_sewer.visible = false
 		
-		for tilemap in owner.get_node("Tilemaps").get_children(): # ensure all levels with this little guy has a node called TileMaps
+		for tilemap in get_tree().current_scene.get_node("Tilemaps").get_children(): # ensure all levels with this little guy has a node called TileMaps
 			minimap_tilemap = tilemap.duplicate()
 			setup_minimap(minimap_tilemap)
 			if tilemap.name == "background_layer": # layer with the widest reach
 				var used_rect: Rect2i = tilemap.get_used_rect()
 				set_minimap_limits(used_rect)
 	
-	if get_tree().current_scene.name == "level1_tank1":
-		goal_object = get_tree().current_scene.get_node("goldfish")
-		goal_marker.texture = goldfish_texture
+	#if get_tree().current_scene.name == "level1_tank1":
+		#goal_object = get_tree().current_scene.get_node("goldfish")
+		#goal_marker.texture = goldfish_texture
 	
-	# assign player
-	player_node = get_tree().get_nodes_in_group("player")[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -77,7 +75,7 @@ func _process(delta: float) -> void:
 			pos.y = clamp(pos.y, center.y - view_size.y/2+OFFSET_GOAL, center.y + view_size.y/2 - OFFSET_GOAL)
 			goal_marker.global_position = pos
 
-func setup_minimap(minimap_tilemap: TileMapLayer) -> void:
+func setup_minimap(minimap_tilemap) -> void:
 	subviewport.add_child(minimap_tilemap)
 	
 func set_minimap_limits(used_rect: Rect2i) -> void:

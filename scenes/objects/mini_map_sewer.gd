@@ -6,7 +6,7 @@ extends Node2D
 var player_positions: Array[Vector2i]
 var all_markers_world: Array[MapSection] # why does godot not have tuples??
 var all_markers_local: Array[MapSection]
-var player
+var player_node: CharacterBody2D
 
 var previous_player_positions: Array[Vector2i]
 
@@ -28,15 +28,16 @@ func _ready() -> void:
 		all_markers_local.append(section_local)
 		layer.visible = false	
 	'''
-	player = get_tree().get_nodes_in_group("player")[0]
+	
 	#mini_map.visible = false
 	#player_trail2.scale = Vector2(0.5, 0.5)
 	player_trail.scale = Vector2(0.5, 0.5) 
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	#var player_position = (player.global_position) 
-	var player_position = (player.global_position + Vector2(650,800)) * player_trail.get_global_transform() 
+	var player_position = (player_node.global_position + Vector2(650,800)) * player_trail.get_global_transform() 
 	var local_pos = player_trail.to_local(player_position)
 	var pos_in_tilemap = player_trail.local_to_map(player_trail.to_local(player_position))
 	player_trail.set_cell(pos_in_tilemap, 0, Vector2(15,1), 0)
