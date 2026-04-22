@@ -1,0 +1,20 @@
+~ start
+Sewer Mermaid: Hey, hey! Are you enjoying your snacks?
+- Yes
+- Yes
+- Yes
+Sewer Mermaid: Haha! I'm glad! But something serious seems to be happening to the aquarium...
+Sewer Mermaid: I heard one of the employees talk about how it could be shutting down!
+~ choice
+Sewer Mermaid: We have to do something! Are you in or not?
+- Sure I guess
+	Sewer Mermaid: Hey, hey! That's great!
+- Do I have to?
+	Sewer Mermaid: Yes. 
+	=> choice
+Sewer Mermaid: First of all, we need to figure out who to ask for more information...
+Sewer Mermaid: Hey, hey! Goldfish knows everyone, so they should know!
+Sewer Mermaid: But we might have to lure them somehow for them to talk to us...
+- I hid snacks in their tank
+Sewer Mermaid: Hey, hey, what!? That's so sneaky... I like it! Let's go get those snacks!
+=> END

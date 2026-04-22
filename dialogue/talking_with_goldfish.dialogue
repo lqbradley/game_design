@@ -1,0 +1,22 @@
+~ start
+Goldfish: [b]ARE YOU THE ONE WHO GOT ME ALL THESE SNACKS?[/b]
+- Yes
+	Goldfish: [b]GREATLY APPRECIATED.[/b]
+- No
+	Goldfish: [b]IT GOT HERE ON ITS OWN!?[/b] [font_size=12]*mumble mumble*[/font_size]
+	Goldfish: [b]DON'T TREAT ME LIKE A FOOL![/b]
+Goldfish: [b]WHAT CAN I DO FOR YOU?[/b]
+Sewer Mermaid: Hey hey! Who might know about the aquarium's current situation?
+Goldfish: [b]HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM[/b]
+Goldfish: [b]MAYBE THE SHRIMP IN THE NEXT TANK OVER KNOWS SOMETHING[/b]
+Goldfish: [b]THE CARETAKER ALWAYS STANDS NEAR THERE TO RANT ABOUT THEIR COWORKERS[/b]
+Sewer Mermaid: Hey hey... The Shrimp... She's really, really fast.
+Sewer Mermaid: If we want to get her to even notice us, we'll have to catch her.
+Sewer Mermaid: Are you up for it, Octopus?
+- I was born ready
+	Sewer Mermaid: Haha! Of course!
+- I'm not sure
+	Sewer Mermaid: I am sure you can do it!
+Sewer Mermaid: Thank you for the help, Goldfish! We're off now!
+Goldfish: [b]GOOD LUCK![/b]
+=> END

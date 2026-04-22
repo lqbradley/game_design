@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bs5dyg8plvc2m"]
+
+[ext_resource type="Texture2D" uid="uid://xtbhsw6jo6ic" path="res://assets/sprites/sprite/mermaids/Mermaid_0.png" id="1_0kr2o"]
+
+[node name="Mermaid" type="Node2D" unique_id=62948681]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=586886316]
+texture = ExtResource("1_0kr2o")

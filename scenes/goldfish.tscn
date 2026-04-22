@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://dp76qe5s5belj"]
+
+[ext_resource type="Texture2D" uid="uid://bk76cupe7bkoe" path="res://assets/sprites/sprite/goldfish.png" id="1_klm48"]
+
+[node name="Goldfish" type="Node2D" unique_id=1729077533]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=324114288]
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=1743387627]
+position = Vector2(69, 0)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=857176116]
+position = Vector2(72, 24)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D11" type="Sprite2D" parent="." unique_id=376071527]
+position = Vector2(48, 48)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1355120880]
+position = Vector2(0, 48)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D13" type="Sprite2D" parent="." unique_id=300205127]
+position = Vector2(-45, 32)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D14" type="Sprite2D" parent="." unique_id=1998094380]
+position = Vector2(-80, -16)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D15" type="Sprite2D" parent="." unique_id=853134664]
+position = Vector2(-112, -32)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D16" type="Sprite2D" parent="." unique_id=488891311]
+position = Vector2(-112, 0)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D17" type="Sprite2D" parent="." unique_id=1931155525]
+position = Vector2(-112, 32)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D18" type="Sprite2D" parent="." unique_id=750142892]
+position = Vector2(-112, 64)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D19" type="Sprite2D" parent="." unique_id=1525019897]
+position = Vector2(-82, 48)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D20" type="Sprite2D" parent="." unique_id=734661251]
+position = Vector2(-82, 24)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D21" type="Sprite2D" parent="." unique_id=1338318026]
+position = Vector2(-64, 8)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D22" type="Sprite2D" parent="." unique_id=1336264755]
+position = Vector2(-104, 16)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D23" type="Sprite2D" parent="." unique_id=1182207957]
+position = Vector2(-104, -8)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D24" type="Sprite2D" parent="." unique_id=485690854]
+position = Vector2(-104, 48)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D25" type="Sprite2D" parent="." unique_id=297231884]
+position = Vector2(0, 64)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D26" type="Sprite2D" parent="." unique_id=1114444733]
+position = Vector2(48, 64)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D27" type="Sprite2D" parent="." unique_id=641468295]
+position = Vector2(85, 40)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D28" type="Sprite2D" parent="." unique_id=1478457980]
+position = Vector2(104, 16)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D29" type="Sprite2D" parent="." unique_id=370498760]
+position = Vector2(88, -16)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1007090396]
+position = Vector2(-37, 0)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=649882901]
+position = Vector2(48, -32)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1334775902]
+position = Vector2(0, -40)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1861321486]
+position = Vector2(-24, -24)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1286055041]
+position = Vector2(-8, 24)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1822289531]
+position = Vector2(32, -8)
+texture = ExtResource("1_klm48")
+hframes = 6
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=753790009]
+position = Vector2(37, 24)
+texture = ExtResource("1_klm48")
+hframes = 6
