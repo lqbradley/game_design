@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dudgkb7q3vm7h"]
+
+[ext_resource type="Texture2D" uid="uid://cvejgoloseyyr" path="res://assets/tmp/thumb-1920-1329272.png" id="1_16ya6"]
+
+[node name="StartScreen" type="TextureRect" unique_id=1368665209]
+offset_left = -206.0
+offset_top = -127.0
+offset_right = 1714.0
+offset_bottom = 949.0
+texture = ExtResource("1_16ya6")
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=735280654]
+layout_mode = 0
+offset_left = 1217.0
+offset_top = 435.0
+offset_right = 1694.0
+offset_bottom = 934.0
+
+[node name="TextureButton" type="TextureButton" parent="Buttons" unique_id=811434669]
+layout_mode = 2

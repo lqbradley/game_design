@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b3khlyhmfahm5"]
+
+[ext_resource type="Texture2D" uid="uid://562eh4qdpeob" path="res://assets/sprites/sprite/shrimp.png" id="2_i88sk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chkeq"]
+atlas = ExtResource("2_i88sk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2kb6"]
+atlas = ExtResource("2_i88sk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmujj"]
+atlas = ExtResource("2_i88sk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0y1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chkeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2kb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmujj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvajo"]
+size = Vector2(75, 28)
+
+[node name="shrimp" type="CharacterBody2D" unique_id=969467289]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1122126413]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_p0y1m")
+autoplay = "default"
+frame_progress = 0.72155005
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=555702661]
+polygon = PackedVector2Array(-24, -18, -19, -18, -12, -14, -6, -14, 1, -10, 3, -8, 10, -7, 22, 1, 24, 2, 24, -1, 28, -1, 30, 0, 28, 1, 31, 4, 21, 4, 22, 6, 29, 9, 22, 9, 15, 10, -1, 9, -8, 7, -15, 6, -19, 4, -22, -2, -23, -7, -17, -7, -17, -10, -24, -16)
+
+[node name="found_area" type="Area2D" parent="." unique_id=1937832328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="found_area" unique_id=1701531912]
+position = Vector2(-1.5, -4)
+shape = SubResource("RectangleShape2D_dvajo")

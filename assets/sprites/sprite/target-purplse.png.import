@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lhypymgi0c7w"
-path="res://.godot/imported/FreePixel.png-6495aad487bb1dcebbe887fc16d9c472.ctex"
+uid="uid://drll21t4cvc66"
+path="res://.godot/imported/target-purplse.png-b6897d2504bf72bcf592dd254540b709.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/room/FreePixel.png"
-dest_files=["res://.godot/imported/FreePixel.png-6495aad487bb1dcebbe887fc16d9c472.ctex"]
+source_file="res://assets/sprites/sprite/target-purplse.png"
+dest_files=["res://.godot/imported/target-purplse.png-b6897d2504bf72bcf592dd254540b709.ctex"]
 
 [params]
 

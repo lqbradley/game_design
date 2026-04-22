@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgccwaf2do1kg"
-path="res://.godot/imported/2_Industrial_Tileset_1_Background.png-c1f17d5d0d1ea597239d9f49a1da48cf.ctex"
+uid="uid://bphf2jp35m482"
+path="res://.godot/imported/target-pink.png-61e490adfcde34cccdd4d6eccfcbb631.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/industrial/2_Industrial_Tileset_1_Background.png"
-dest_files=["res://.godot/imported/2_Industrial_Tileset_1_Background.png-c1f17d5d0d1ea597239d9f49a1da48cf.ctex"]
+source_file="res://assets/sprites/sprite/target-pink.png"
+dest_files=["res://.godot/imported/target-pink.png-61e490adfcde34cccdd4d6eccfcbb631.ctex"]
 
 [params]
 

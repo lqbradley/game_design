@@ -44,7 +44,6 @@ func _switch_level(current_scene) -> void:
 
 func _spawn_player() -> void:
 	spawn_points = get_tree().get_nodes_in_group("spawn_points")
-	print(spawn_points)
 	if spawn_points.is_empty():
 		return
 
@@ -55,6 +54,8 @@ func _spawn_player() -> void:
 	var camera := Camera2D.new()
 	_player.add_child(camera)
 	camera.zoom = Vector2(3.0, 3.0)
+	
+	
 
 
 func _get_new_level(current_level) -> String:

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://copyy6177e6rp"]
+
+[ext_resource type="Script" uid="uid://baws1s4g4nh8u" path="res://scripts/mini_map.gd" id="1_jqj4m"]
+[ext_resource type="Texture2D" uid="uid://bgqwdr1dhk5xp" path="res://assets/sprites/sprite/octopus_marker.png" id="2_nca2k"]
+[ext_resource type="PackedScene" uid="uid://skomx01ibo7t" path="res://scenes/objects/minimap_sewer.tscn" id="3_d0t61"]
+[ext_resource type="Texture2D" uid="uid://drll21t4cvc66" path="res://assets/sprites/sprite/target-purplse.png" id="4_s62fb"]
+
+[sub_resource type="Gradient" id="Gradient_0x4rb"]
+offsets = PackedFloat32Array(0.27865613, 0.701581)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_by4k2"]
+gradient = SubResource("Gradient_0x4rb")
+fill = 1
+fill_from = Vector2(0.48376068, 0.50085473)
+
+[node name="mini-map" type="CanvasLayer" unique_id=6324897]
+script = ExtResource("1_jqj4m")
+
+[node name="UI" type="Control" parent="." unique_id=1075309626]
+layout_mode = 3
+anchor_left = 0.70400006
+anchor_top = 0.679
+anchor_right = 0.70400006
+anchor_bottom = 0.679
+offset_left = -0.008056641
+offset_top = 0.0079956055
+offset_right = 338.99194
+offset_bottom = 209.008
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=86598677]
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 208.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer" unique_id=1634118126]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI/PanelContainer/MarginContainer" unique_id=904963403]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/PanelContainer/MarginContainer/SubViewportContainer" unique_id=57630847]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(340, 208)
+render_target_update_mode = 4
+
+[node name="MinimapCamera" type="Camera2D" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=1678055451]
+zoom = Vector2(0.6, 0.6)
+limit_enabled = false
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+
+[node name="PlayerMarker" type="Sprite2D" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/MinimapCamera" unique_id=1433679399]
+z_index = 15
+texture_filter = 1
+position = Vector2(6, 5.25)
+texture = ExtResource("2_nca2k")
+region_rect = Rect2(0, 0, 38, 31)
+
+[node name="GoalMarker" type="Sprite2D" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/MinimapCamera" unique_id=183886399]
+z_index = 15
+texture_filter = 1
+position = Vector2(6, 5.25)
+texture = ExtResource("2_nca2k")
+region_rect = Rect2(0, 0, 38, 31)
+
+[node name="minimap_sewer" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=1507922663 instance=ExtResource("3_d0t61")]
+position = Vector2(620, 339)
+
+[node name="ExitMarker" type="Sprite2D" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport" unique_id=87900207]
+z_index = 15
+position = Vector2(1262, -10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_s62fb")
+
+[node name="PointLight2D" type="PointLight2D" parent="UI/PanelContainer/MarginContainer/SubViewportContainer/SubViewport/ExitMarker" unique_id=1076118770]
+position = Vector2(64, 58)
+scale = Vector2(3, 2.8125)
+color = Color(0.7411765, 0.54901963, 0.8862745, 1)
+energy = 3.5
+texture = SubResource("GradientTexture2D_by4k2")
+texture_scale = 2.76
