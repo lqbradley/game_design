@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bdlfvfuu2xqia"
+path="res://.godot/imported/talking_with_shrimp.dialogue-39c0ce14837647be8961e42b1c9bc162.tres"
+
+[deps]
+
+source_file="res://dialogue/talking_with_shrimp.dialogue"
+dest_files=["res://.godot/imported/talking_with_shrimp.dialogue-39c0ce14837647be8961e42b1c9bc162.tres"]
+
+[params]
+
+defaults=true

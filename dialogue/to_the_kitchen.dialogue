@@ -1,0 +1,11 @@
+~ start
+Sewer Mermaid: Hey hey! The kitchen is normally locked at this time of night...
+Sewer Mermaid: But don't fret! We can use another route... my sewers!
+- Gross
+	Sewer Mermaid: Hey hey, Rude!!
+	- Sorry...
+		Sewer Mermaid: Apology accepted, I guess..
+- Cool
+Sewer Mermaid: So just hop into this vent! There's a shortcut to the sewers in there!
+Sewer Mermaid: Let's go!!
+=> END
