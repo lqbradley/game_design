@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://daclu5pvu3v3"]
+
+[ext_resource type="Script" uid="uid://u5hls72ounps" path="res://scripts/brain.gd" id="1_4whnq"]
+[ext_resource type="Texture2D" uid="uid://b8vyba2s4f45d" path="res://assets/sprites/brainmonster.png" id="1_yryno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4whnq"]
+atlas = ExtResource("1_yryno")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2xcu"]
+atlas = ExtResource("1_yryno")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q55l"]
+atlas = ExtResource("1_yryno")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0frno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4whnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2xcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q55l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yryno"]
+radius = 10.049875
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4whnq"]
+radius = 3.0
+
+[node name="brain" type="AnimatableBody2D" unique_id=1466931959]
+top_level = true
+script = ExtResource("1_4whnq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1807422241]
+texture_filter = 3
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_0frno")
+autoplay = "default"
+frame_progress = 0.054209746
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2068928594]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1517553090]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_yryno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2096593602]
+position = Vector2(-1, 5)
+shape = SubResource("CircleShape2D_4whnq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

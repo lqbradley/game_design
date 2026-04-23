@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u405kgrnu3vb" path="res://scripts/player_3.gd" id="1_aenja"]
 [ext_resource type="Texture2D" uid="uid://cih0f7rn6r10s" path="res://assets/sprites/sprite/Octopus Idle Sheet.png" id="2_1wjf3"]
+[ext_resource type="PackedScene" uid="uid://bcvphbifpq5wn" path="res://scenes/objects/fish_bg.tscn" id="3_1wjf3"]
 
 [sub_resource type="Gradient" id="Gradient_u7evb"]
 offsets = PackedFloat32Array(0.30658436, 0.54526746)
@@ -47,6 +48,7 @@ size = Vector2(45, 33)
 radius = 11.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1120576569 groups=["player"]]
+process_mode = 1
 collision_layer = 3
 script = ExtResource("1_aenja")
 
@@ -98,6 +100,13 @@ collision_layer = 3
 [node name="object_collider" type="CollisionShape2D" parent="object_area" unique_id=878248526]
 position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_aenja")
+
+[node name="fish_bg" parent="." unique_id=645495233 instance=ExtResource("3_1wjf3")]
+process_mode = 3
+position = Vector2(-239, -64)
+
+[node name="Marker2D" type="Marker2D" parent="fish_bg" unique_id=1285204017]
+position = Vector2(1130, 340)
 
 [connection signal="body_entered" from="push_area" to="." method="_on_push_area_body_entered"]
 [connection signal="body_exited" from="push_area" to="." method="_on_push_area_body_exited"]

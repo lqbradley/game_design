@@ -31,6 +31,10 @@ func _ready() -> void:
 		exit_marker.scale = Vector2(1.5,1.5)
 		minimap_sewer.visible = true
 		goal_object = get_tree().current_scene.get_node("enter_sewer")
+	elif get_tree().current_scene.name == "start_scene":
+		self.visible = false
+	elif get_tree().current_scene.name == "end_scene":
+		self.visible = false
 	else: 
 		is_scene_sewer = false
 		minimap_camera.zoom = Vector2(0.6,0.6)
@@ -69,7 +73,7 @@ func _process(delta: float) -> void:
 		if is_scene_sewer:
 			pos.x = clamp(pos.x, center.x - view_size.x/2+OFFSET_EXIT, center.x + view_size.x/2 - OFFSET_EXIT)
 			pos.y = clamp(pos.y, center.y - view_size.y/2+OFFSET_EXIT, center.y + view_size.y/2 - OFFSET_EXIT)
-			exit_marker.global_position = pos
+			exit_marker.global_position = (pos + Vector2(1300,800)) * minimap_sewer.get_node("player_trail").get_global_transform()
 		else:
 			pos.x = clamp(pos.x, center.x - view_size.x/2 +OFFSET_GOAL, center.x + view_size.x/2 - OFFSET_GOAL)
 			pos.y = clamp(pos.y, center.y - view_size.y/2+OFFSET_GOAL, center.y + view_size.y/2 - OFFSET_GOAL)

@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://bcvphbifpq5wn"]
+
+[ext_resource type="Texture2D" uid="uid://xt8cpkwt53q6" path="res://assets/sprites/fish_bg.png" id="1_p4yn4"]
+[ext_resource type="Script" uid="uid://ofjb75jy20cb" path="res://scripts/fish_bg.gd" id="1_ymn1j"]
+[ext_resource type="Texture2D" uid="uid://b61m5p1maa4rs" path="res://assets/sprites/whale/blue-whale.png" id="3_lohum"]
+[ext_resource type="Texture2D" uid="uid://bvnq8oqj7hj7o" path="res://assets/sprites/sea_creatures/swordfish.png" id="4_wu3p0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpxab"]
+atlas = ExtResource("4_wu3p0")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbjcs"]
+atlas = ExtResource("4_wu3p0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2hxj"]
+atlas = ExtResource("4_wu3p0")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh2sq"]
+atlas = ExtResource("4_wu3p0")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spq4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpxab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbjcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2hxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh2sq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkypd"]
+atlas = ExtResource("3_lohum")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8mpo"]
+atlas = ExtResource("3_lohum")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngq3i"]
+atlas = ExtResource("3_lohum")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3wpo"]
+atlas = ExtResource("3_lohum")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivvgr"]
+atlas = ExtResource("3_lohum")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l75us"]
+atlas = ExtResource("3_lohum")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2oab"]
+atlas = ExtResource("3_lohum")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6dgw"]
+atlas = ExtResource("3_lohum")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5harv"]
+atlas = ExtResource("3_lohum")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hkfr"]
+atlas = ExtResource("3_lohum")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnlbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkypd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8mpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngq3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3wpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivvgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l75us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2oab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6dgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5harv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hkfr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="fish_bg" type="Node2D" unique_id=645495233]
+script = ExtResource("1_ymn1j")
+
+[node name="fish" type="Node2D" parent="." unique_id=426662537]
+
+[node name="fishies5" type="Sprite2D" parent="fish" unique_id=1498652685]
+process_mode = 3
+texture_filter = 1
+position = Vector2(-54, 85)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies" type="Sprite2D" parent="fish" unique_id=70205642]
+process_mode = 3
+texture_filter = 1
+position = Vector2(227.99998, -62.500008)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies2" type="Sprite2D" parent="fish" unique_id=160915916]
+process_mode = 3
+texture_filter = 1
+position = Vector2(44, -7)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies12" type="Sprite2D" parent="fish" unique_id=1448637195]
+process_mode = 3
+texture_filter = 1
+position = Vector2(431, -140)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies13" type="Sprite2D" parent="fish" unique_id=1573805983]
+process_mode = 3
+texture_filter = 1
+position = Vector2(637, 254)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies14" type="Sprite2D" parent="fish" unique_id=1140708404]
+process_mode = 3
+texture_filter = 1
+position = Vector2(152, 294)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies15" type="Sprite2D" parent="fish" unique_id=1970939966]
+process_mode = 3
+texture_filter = 1
+position = Vector2(466, 282)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies16" type="Sprite2D" parent="fish" unique_id=2028143242]
+process_mode = 3
+texture_filter = 1
+position = Vector2(811, -78)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies3" type="Sprite2D" parent="fish" unique_id=1834625199]
+process_mode = 3
+texture_filter = 1
+position = Vector2(376, 21)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies4" type="Sprite2D" parent="fish" unique_id=142937480]
+process_mode = 3
+texture_filter = 1
+position = Vector2(195, 74)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies6" type="Sprite2D" parent="fish" unique_id=124804631]
+process_mode = 3
+texture_filter = 1
+position = Vector2(71, 185)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies8" type="Sprite2D" parent="fish" unique_id=3032583]
+process_mode = 3
+texture_filter = 1
+position = Vector2(280, 138)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies9" type="Sprite2D" parent="fish" unique_id=1455939895]
+process_mode = 3
+texture_filter = 1
+position = Vector2(491, -28.000002)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies7" type="Sprite2D" parent="fish" unique_id=324248677]
+process_mode = 3
+texture_filter = 1
+position = Vector2(530, 119.000015)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies10" type="Sprite2D" parent="fish" unique_id=1096701327]
+process_mode = 3
+texture_filter = 1
+position = Vector2(750, 43.000008)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies11" type="Sprite2D" parent="fish" unique_id=174714036]
+process_mode = 3
+texture_filter = 1
+position = Vector2(865.99994, 139)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="fishies17" type="Sprite2D" parent="fish" unique_id=539967445]
+process_mode = 3
+texture_filter = 1
+position = Vector2(959, 241)
+scale = Vector2(0.65972215, 0.79938275)
+texture = ExtResource("1_p4yn4")
+
+[node name="swordfish" type="AnimatedSprite2D" parent="." unique_id=1973438626]
+texture_filter = 1
+position = Vector2(301, -90)
+sprite_frames = SubResource("SpriteFrames_spq4e")
+
+[node name="whales" type="Node2D" parent="." unique_id=1732266097]
+
+[node name="whale" type="AnimatedSprite2D" parent="whales" unique_id=440948785]
+position = Vector2(33, 34)
+sprite_frames = SubResource("SpriteFrames_wnlbh")
+autoplay = "default"
+frame_progress = 0.21128917
+
+[node name="whale2" type="AnimatedSprite2D" parent="whales" unique_id=288559986]
+position = Vector2(179, 88)
+sprite_frames = SubResource("SpriteFrames_wnlbh")
+autoplay = "default"
+frame_progress = 0.2294256
+
+[node name="whale3" type="AnimatedSprite2D" parent="whales" unique_id=608022388]
+position = Vector2(117, 196)
+sprite_frames = SubResource("SpriteFrames_wnlbh")
+autoplay = "default"
+frame_progress = 0.2294256

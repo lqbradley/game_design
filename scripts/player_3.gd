@@ -12,21 +12,31 @@ const JUMP_VELOCITY = -250.0
 @onready var ray_cast_pull: RayCast2D = $RayCastPull
 @onready var pickup_marker: Marker2D = $pickup_marker
 @onready var point_light: PointLight2D = $PointLight2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var fish_bg: Node2D = $fish_bg
 
 var r:float
 var mouse_position
 var number_already_jump: int = 0
 var pickedObject
 
+var current_scene
+
 
 signal pulling_object_towards_player
 
 func _ready() -> void:
 	r = collision_shape.shape.get_radius()
+	current_scene = get_tree().current_scene.name
+	if "sewer" in current_scene:
+		point_light.visible = true
+		fish_bg.visible = false
+	else:
+		point_light.visible = false
+		fish_bg.visible = true
 	
 func _physics_process(delta: float) -> void:
 	
-	var current_scene = get_tree().current_scene.name
 	# in sewer scenes remove gravity
 	if "sewer" in current_scene:
 		var y_dir := Input.get_axis("move_up", "move_down")
@@ -34,9 +44,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = y_dir * SPEED
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
-		point_light.visible = true
 	else:
-		point_light.visible = false
 		# Add the gravity.
 		if not is_on_floor():
 			velocity.y += GRAVITY_WATER * delta
@@ -48,6 +56,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction > 0:
+			sprite.flip_h = false
+		if direction < 0:
+			sprite.flip_h = true
+	
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
@@ -95,7 +108,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func double_jump(delta):
+func double_jump():
 	if number_already_jump < 2 && Input.is_action_just_pressed("jump"):
 		velocity.y += JUMP_VELOCITY
 		number_already_jump += 1

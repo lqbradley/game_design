@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var TIMER_LENGTH = 15
+@export var TIMER_LENGTH = 20
 @onready var boundary_tilemap: TileMapLayer = $boundary_tilemap
 @onready var final_area_tilemap: TileMapLayer = $final_area_tilemap
 @onready var floor_tilemap: TileMapLayer = $Tilemaps/TileMapLayer
