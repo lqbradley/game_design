@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 @onready var acceleration = GameManager.ACCELERATION
 @onready var JUMP_STYLE = GameManager.JUMP_STYLE
 @onready var JUMP_VELOCITY = GameManager.JUMP_VELOCITY
@@ -7,6 +6,7 @@ extends CharacterBody2D
 @onready var DASH_DISTANCE = GameManager.DASH_DISTANCE
 @onready var DASH_TIME = GameManager.DASH_TIME
 
+#const JUMP_STYLE = "hold_jump"
 #const acceleration = INF
 #const JUMP_VELOCITY = -500.0
 #const MAX_SPEED = 350.0
@@ -132,7 +132,7 @@ func hold_jump(delta):
 	
 	if Input.is_action_pressed("jump"):
 		time_passed_since_pressed_jump += delta
-		velocity.y = JUMP_VELOCITY - time_passed_since_pressed_jump * CUT_JUMP_TIME
+		velocity.y = JUMP_VELOCITY + time_passed_since_pressed_jump * CUT_JUMP_TIME
 
 func simple_jump(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():

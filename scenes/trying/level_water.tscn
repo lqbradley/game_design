@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dyhme2idqwnfp" path="res://assets/sprites/tilemaps/industrial/2_Industrial_Tileset_1C_Background_Violet.png" id="1_lelv0"]
 [ext_resource type="PackedScene" uid="uid://bjle617yfa7f" path="res://scenes/trying/player_float.tscn" id="2_b4thr"]
-[ext_resource type="PackedScene" uid="uid://dmg21thlp31g" path="res://scenes/tank_border.tscn" id="3_sblt2"]
+[ext_resource type="PackedScene" uid="uid://dmg21thlp31g" path="res://scenes/objects/tank_border.tscn" id="3_sblt2"]
 [ext_resource type="PackedScene" uid="uid://nbvj67hrkc3g" path="res://scenes/trying/climable_wall.tscn" id="4_sblt2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6eec"]

@@ -15,7 +15,7 @@ ss2d/version="3.3.1"
 [application]
 
 config/name="Detect-Octo"
-run/main_scene="uid://djfnftybqqhtu"
+run/main_scene="uid://dkpjrh3w21xep"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -23,8 +23,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PhantomCameraManager="*uid://duq6jhf6unyis"
-GameManager="*uid://ccebd342uwhc5"
 DialogueManager="*uid://c3rodes2l3gxb"
+GameManager="*uid://ccebd342uwhc5"
 
 [dialogue_manager]
 
@@ -109,10 +109,6 @@ pull={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
-
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://dialogue/intro_cutscene.dialogue", "res://dialogue/talking_with_goldfish.dialogue", "res://dialogue/talking_with_shrimp.dialogue", "res://dialogue/the_kitchen.dialogue", "res://dialogue/to_the_kitchen.dialogue")
 
 [layer_names]
 

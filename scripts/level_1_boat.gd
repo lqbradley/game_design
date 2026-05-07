@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var TIMER_LENGTH = 20
+@export var TIMER_LENGTH = 3
 @onready var boundary_tilemap: TileMapLayer = $boundary_tilemap
 @onready var final_area_tilemap: TileMapLayer = $final_area_tilemap
-@onready var floor_tilemap: TileMapLayer = $Tilemaps/TileMapLayer
+@onready var floor_tilemap: TileMapLayer = $Tilemaps/shipwreck
 @onready var shrimp: CharacterBody2D = $shrimp
 
 var mini_map
@@ -67,8 +67,6 @@ func _ready() -> void:
 	
 	boundary_tilemap.visible = false # remove from view
 	final_area_tilemap.visible = false
-	
-
 	
 	
 	

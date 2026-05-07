@@ -42,13 +42,14 @@ func _process(delta: float) -> void:
 	
 	if num_collected >= REQUIRED:
 		enoughCollected.emit()
+		goldfish.is_enough_collected = true
 
 func _on_player_leave() -> void:
 	await get_tree().create_timer(3.0).timeout
 	exit_lock = false
+	inventory.add_theme_color_override("font_color", Color("#ffffff"))
 
 
-		
 func _on_collected() -> void:
 	num_collected += 1
 	inventory.text = str(num_collected)
@@ -79,14 +80,11 @@ func get_random_offset() -> Vector2:
 		rand.randf_range(-shake_strength, shake_strength)
 	)
 	
-
-
 func _on_lever_tutorial_body_entered(body: Node2D) -> void:
 		if not body.is_in_group("player"):
 			return
 		if body is CharacterBody2D:
 			player_node.process_mode = Node.PROCESS_MODE_DISABLED
-			print(player_node.process_mode)
 			var tutorial_text = """~ start
 Levers need to be pushed for the moving platforms to activate
 Keep moving in the direction you want to push it in.

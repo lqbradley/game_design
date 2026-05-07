@@ -73,7 +73,8 @@ func _process(delta: float) -> void:
 		if is_scene_sewer:
 			pos.x = clamp(pos.x, center.x - view_size.x/2+OFFSET_EXIT, center.x + view_size.x/2 - OFFSET_EXIT)
 			pos.y = clamp(pos.y, center.y - view_size.y/2+OFFSET_EXIT, center.y + view_size.y/2 - OFFSET_EXIT)
-			exit_marker.global_position = (pos + Vector2(1300,800)) * minimap_sewer.get_node("player_trail").get_global_transform()
+			#exit_marker.global_position = pos
+			exit_marker.global_position = (pos + Vector2(1400,800)) * minimap_sewer.get_node("player_trail").get_global_transform()
 		else:
 			pos.x = clamp(pos.x, center.x - view_size.x/2 +OFFSET_GOAL, center.x + view_size.x/2 - OFFSET_GOAL)
 			pos.y = clamp(pos.y, center.y - view_size.y/2+OFFSET_GOAL, center.y + view_size.y/2 - OFFSET_GOAL)

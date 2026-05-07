@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://skomx01ibo7t"]
 
-[ext_resource type="Script" uid="uid://dl48l0lye8xke" path="res://scenes/objects/mini_map_sewer.gd" id="1_5adg2"]
+[ext_resource type="Script" uid="uid://dl48l0lye8xke" path="res://scripts/mini_map_sewer.gd" id="1_5adg2"]
 [ext_resource type="Texture2D" uid="uid://bq7bah67tsamb" path="res://assets/sprites/tilemaps/sewer_1.png" id="1_j2dg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5adg2"]

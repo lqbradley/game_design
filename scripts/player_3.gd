@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -250.0
+var JUMP_VELOCITY = -250.0
 @export var GRAVITY_WATER = 800
 @export var GRAVITY_LAND = 980
 @export var PULL_LENGTH: float = 40
@@ -34,6 +34,7 @@ func _ready() -> void:
 	else:
 		point_light.visible = false
 		fish_bg.visible = true
+	
 	
 func _physics_process(delta: float) -> void:
 	

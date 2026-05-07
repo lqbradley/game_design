@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 @export var jumpReloadRate = 100
 
 signal hasJumped
-@export var maxTimeToJump = 80
+@export var maxTimeToJump = 300
 @onready var currentTimeToJump: float = maxTimeToJump
 @onready var ray_cast_down: RayCast2D = $RayCastDown
 
@@ -40,11 +40,26 @@ const ST_BAR_POS_RIGHT: float = 4
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if not is_on_floor() || is_on_wall():
+		velocity += get_gravity() * delta
+	
+	player_jump(delta)
+	var direction := Input.get_axis("move_left", "move_right")
+	if direction:
+		velocity.x = direction * SPEED
+	
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	move_and_slide()
+	
+
+func physics_process(delta: float) -> void:
+	# Add the gravity.
 	#if not is_on_floor() || is_on_wall():
 		#velocity += get_gravity() * delta
 	#
 	#player_jump(delta)
-	
+	#
 	if velocity.x:
 		wall_ray.target_position.x = 16 * sign(velocity.x)
 	var on_wall: bool = wall_ray.is_colliding() and wall_ray.get_collider() is TileMapLayer

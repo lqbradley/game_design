@@ -12,7 +12,7 @@ var rng = RandomNumberGenerator.new()
 var pushing_time: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	time_to_switch = rng.randf_range(1.0,1.5)
+	time_to_switch = rng.randf_range(0.5,1.5)
 	influence_area.monitoring = true
 	
 	await get_tree().process_frame

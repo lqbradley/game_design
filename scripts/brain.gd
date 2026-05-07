@@ -20,9 +20,6 @@ func start_tween():
 	tween.tween_callback(Callable(sprite, "set_flip_h").bind(false))
 
 	
-	
-
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:

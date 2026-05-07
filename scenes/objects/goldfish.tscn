@@ -63,11 +63,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahjwn"]
 size = Vector2(26.5, 21.5)
 
-[node name="goldfish" type="AnimatedSprite2D" unique_id=1500461814]
+[node name="goldfish" type="AnimatedSprite2D" unique_id=1500461814 groups=["exit"]]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_n4n1q")
 autoplay = "default"
-frame_progress = 0.11442354
+frame_progress = 0.8125992
 script = ExtResource("2_jhdb0")
 
 [node name="exit_area" type="Area2D" parent="." unique_id=1086379677]

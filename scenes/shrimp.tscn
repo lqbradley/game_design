@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bnw0foof7yv3k"]
-
-[ext_resource type="Texture2D" uid="uid://562eh4qdpeob" path="res://assets/sprites/sprite/shrimp.png" id="1_ph0ky"]
-
-[node name="Shrimp" type="Node2D" unique_id=44589407]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2101607515]
-texture = ExtResource("1_ph0ky")
-hframes = 4

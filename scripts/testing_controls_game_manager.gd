@@ -8,7 +8,7 @@ var DASH_DISTANCE: int
 var DASH_TIME: float
 
 const SCENARIOS = {
-	"JUMP_STYLE": [ "double_jump", "hold_hover","simple_jump",  "hold_jump",],
+	"JUMP_STYLE": [ "hold_jump", "double_jump", "hold_hover","simple_jump"],
 	"ACCELERATION": [5,10,INF],
 	"MAX_SPEED": [400,500,8000],
 	"JUMP_VELOCITY": [-300,-400,-500],
@@ -36,7 +36,7 @@ func _ready() -> void:
 			test_cases.append(t)
 	#var acc_test_cases = generate_test_case("ACCELERATION", [5,10,20])
 	start_test_case(test_cases)
-	pass
+	
 
 func _on_timer_timeout():
 	get_tree().reload_current_scene()
@@ -57,7 +57,7 @@ func start_test_case(fs: Array[TestCase]) -> void:
 		
 		var timer = Timer.new()
 		add_child(timer)
-		timer.wait_time = 8
+		timer.wait_time = 20
 		timer.start()
 		timer.timeout.connect(_on_timer_timeout)
 		await timer.timeout

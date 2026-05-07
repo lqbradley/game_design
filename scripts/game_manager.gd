@@ -48,9 +48,9 @@ func _setup_level() -> void:
 func _on_exit_load_new_area(current_scene, exit_door) -> void:
 	call_deferred("_switch_level", current_scene)
 
+
 func _switch_level(current_scene) -> void:
 	var next_level := _get_new_level(current_scene)
-	print(next_level)
 	if next_level == "level1_tank1":
 		get_tree().change_scene_to_packed(level1_tank1)
 	elif next_level == "level1_sewer":
@@ -69,9 +69,6 @@ func _switch_level(current_scene) -> void:
 		
 	_setup_level()
 
-func _reanimate_player(_player) -> void:
-	_player.set_process_input(true)
-	_player.set_process_unhandled_input(true) 
 	
 func _give_instructions() -> void:
 	var dialogue_text: String 
@@ -107,8 +104,13 @@ He moves around a lot, so check out the map in the bottom right on where he is
 Good luck!
 => END
 """
-	var dialogue = DialogueManager.create_resource_from_text(dialogue_text)
-	DialogueManager.show_dialogue_balloon(dialogue, "start")
+	elif get_tree().current_scene.name == "tutorial_level":
+		dialogue_text = """~ start
+=> END
+"""
+	if dialogue_text:
+		var dialogue = DialogueManager.create_resource_from_text(dialogue_text)
+		DialogueManager.show_dialogue_balloon(dialogue, "start")
 		
 		
 func _spawn_player() -> CharacterBody2D:
@@ -120,11 +122,19 @@ func _spawn_player() -> CharacterBody2D:
 	var camera := Camera2D.new()
 	_player.add_child(camera)
 	camera.zoom = Vector2(3.0, 3.0)
-	if current_level_index == 0:
+	if get_tree().current_scene.name == "start_scene" || get_tree().current_scene.name == "end_scene":
 		camera.offset = Vector2(85,0)
 	
 	
 	_player.get_node("fish_bg").camera_node = camera
+	if get_tree().current_scene.name == "level1_tank1":
+		_player.scale = Vector2(0.5, 0.5)
+		camera.zoom = Vector2(5.0,5.0)
+		get_tree().current_scene.player_node = _player
+		for child in _player.get_children():
+			if is_instance_of(child, Camera2D):
+				get_tree().current_scene.camera_node = child
+	
 	get_tree().current_scene.add_child(_player)
 	_player.global_position = spawn_points[0].global_position
 	
@@ -143,18 +153,13 @@ func _add_minimap(_player) -> void:
 	
 	var _minimap_sewer = _minimap.find_child("mini_map_sewer", true, false)
 	
-	
 	current_scene.add_child.call_deferred(_minimap, true)
 	_assign_goal_object.call_deferred(get_tree().current_scene,_minimap)
 	
 	if _minimap_sewer:
 		_minimap_sewer.player_node = _player
 	
-	if current_scene.name == "level1_tank1":
-		current_scene.player_node = _player
-		for child in _player.get_children():
-			if is_instance_of(child, Camera2D):
-				current_scene.camera_node = child
+	
 	
 	
 		

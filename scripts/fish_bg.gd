@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var swordfish: AnimatedSprite2D = $swordfish
 @onready var whales: Node2D = $whales
 @onready var fish: Node = $fish
 
@@ -17,7 +16,6 @@ var next_fish_here: bool = false
 const MAX_WHALES: int = 5
 
 func _ready() -> void:
-	swordfish.flip_h = true
 	viewport = get_viewport()
 	
 	rng.randomize()
@@ -65,29 +63,17 @@ func _process(delta: float) -> void:
 	
 	for whale in whales.get_children():
 		if whale.global_position.x > right_x:
-			await get_tree().create_timer(2.0).timeout
 			if whales.get_child_count() < MAX_WHALES:
 				var new_whale = whale.duplicate()
 				new_whale.z_index = randf_range(0,4)
 				whales.add_child(new_whale)
 				new_whale.global_position = Vector2(
-					randf_range(left_x-80, left_x),
+					randf_range(left_x-520, left_x-80),
 					randf_range(top_y, bottom_y)
 				)
-			
+			whale.queue_free()
 		continue
 	
-func start_tween():
-	# tween for fish_bg
-	var fish_tween = get_tree().create_tween()
-	fish_tween.set_loops() # infinite
-	fish_tween.set_trans(Tween.TRANS_LINEAR)
-	#fish_tween.tween_property(fishies, "position:x", position.x - (2.0 * SPEED_FISH), 2.0)
-		
-	var whale_tween = get_tree().create_tween()
-	whale_tween.set_loops()
-	whale_tween.set_trans(Tween.TRANS_LINEAR)
-	#whale_tween.tween_property(whale, "position:x", position.x - (2.0 * SPEED_WHALE), 2.0)
 		
 		
 func randomize_z(parent: Node2D):

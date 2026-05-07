@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3khlyhmfahm5"]
 
-[ext_resource type="Script" uid="uid://vaj65jr55ik1" path="res://scripts/enter_sewer.gd" id="1_0xbrf"]
+[ext_resource type="Script" uid="uid://dh4scdyhu33dn" path="res://scripts/shrimp.gd" id="1_0xbrf"]
 [ext_resource type="Texture2D" uid="uid://562eh4qdpeob" path="res://assets/sprites/sprite/shrimp.png" id="2_i88sk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chkeq"]
@@ -32,8 +32,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0xbrf"]
-radius = 50.53959
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xbrf"]
+size = Vector2(57, 21)
 
 [node name="shrimp" type="CharacterBody2D" unique_id=969467289 groups=["exit"]]
 script = ExtResource("1_0xbrf")
@@ -51,8 +51,6 @@ polygon = PackedVector2Array(-24, -18, -19, -18, -12, -14, -6, -14, 1, -10, 3, -
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=1701531912]
-position = Vector2(-0.75, -2)
+position = Vector2(1.75, -3.75)
 scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_0xbrf")
-
-[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
+shape = SubResource("RectangleShape2D_0xbrf")

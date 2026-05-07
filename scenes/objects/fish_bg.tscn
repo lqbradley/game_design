@@ -3,43 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://xt8cpkwt53q6" path="res://assets/sprites/fish_bg.png" id="1_p4yn4"]
 [ext_resource type="Script" uid="uid://ofjb75jy20cb" path="res://scripts/fish_bg.gd" id="1_ymn1j"]
 [ext_resource type="Texture2D" uid="uid://b61m5p1maa4rs" path="res://assets/sprites/whale/blue-whale.png" id="3_lohum"]
-[ext_resource type="Texture2D" uid="uid://bvnq8oqj7hj7o" path="res://assets/sprites/sea_creatures/swordfish.png" id="4_wu3p0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vpxab"]
-atlas = ExtResource("4_wu3p0")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbjcs"]
-atlas = ExtResource("4_wu3p0")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2hxj"]
-atlas = ExtResource("4_wu3p0")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qh2sq"]
-atlas = ExtResource("4_wu3p0")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_spq4e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vpxab")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tbjcs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2hxj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qh2sq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkypd"]
 atlas = ExtResource("3_lohum")
@@ -243,18 +206,13 @@ position = Vector2(959, 241)
 scale = Vector2(0.65972215, 0.79938275)
 texture = ExtResource("1_p4yn4")
 
-[node name="swordfish" type="AnimatedSprite2D" parent="." unique_id=1973438626]
-texture_filter = 1
-position = Vector2(301, -90)
-sprite_frames = SubResource("SpriteFrames_spq4e")
-
 [node name="whales" type="Node2D" parent="." unique_id=1732266097]
 
 [node name="whale" type="AnimatedSprite2D" parent="whales" unique_id=440948785]
 position = Vector2(33, 34)
 sprite_frames = SubResource("SpriteFrames_wnlbh")
 autoplay = "default"
-frame_progress = 0.21128917
+frame_progress = 0.058133624
 
 [node name="whale2" type="AnimatedSprite2D" parent="whales" unique_id=288559986]
 position = Vector2(179, 88)
