@@ -18,6 +18,10 @@ The platforms used in the first level are the [Cave Tileset](https://silvdragoon
 
 The moving platforms and the buttons on the start and end screen are modified from the [Underwater Tiles](https://opengameart.org/content/underwater-tiles)​ by Sevarihk
 
+The blue whale is the [Blue Whale](https://opengameart.org/content/blue-whale) by rapidpunches
+
+The background for the start scene is the [Fish Pack](https://kenney.nl/assets/fish-pack) by kenney.nl
+
 ## License
 You can use it I suppose but why
 
